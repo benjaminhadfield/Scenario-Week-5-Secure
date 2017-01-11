@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2671940d-a3b2-4b30-a8d6-c27cec4c658c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/connection.php" afterPath="$PROJECT_DIR$/connection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/blog_controller.php" afterPath="$PROJECT_DIR$/controllers/blog_controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/pages_controller.php" afterPath="$PROJECT_DIR$/controllers/pages_controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/blog.php" afterPath="$PROJECT_DIR$/models/blog.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.php" afterPath="$PROJECT_DIR$/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/blog/index.php" afterPath="$PROJECT_DIR$/views/blog/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/blog/show.php" afterPath="$PROJECT_DIR$/views/blog/show.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layout.php" afterPath="$PROJECT_DIR$/views/layout.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/error.php" afterPath="$PROJECT_DIR$/views/pages/error.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/home.php" afterPath="$PROJECT_DIR$/views/pages/home.php" />
-    </list>
+    <list default="true" id="2671940d-a3b2-4b30-a8d6-c27cec4c658c" name="Default" comment="" />
     <ignored path="sw5.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -37,7 +25,7 @@
       <file leaf-file-name="blog.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/blog.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-7.5">
               <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
               <folding>
                 <marker date="1484155935000" expanded="true" signature="310:328" placeholder="SELECT * FRO... blog" />
@@ -54,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/views/pages/error.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.024793388">
-              <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+              <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -145,6 +133,7 @@
         <option value="$PROJECT_DIR$/views/_require/nav.php" />
         <option value="$PROJECT_DIR$/views/layout.php" />
         <option value="$PROJECT_DIR$/views/blog/index.php" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -195,6 +184,16 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="sw5" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sw5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sw5_secure" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -483,7 +482,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/blog.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="-7.5">
           <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
           <folding>
             <marker date="1484155935000" expanded="true" signature="310:328" placeholder="SELECT * FRO... blog" />
@@ -527,10 +526,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor vertical-scroll-proportion="0.7055749">
+            <caret line="27" column="113" selection-start-line="27" selection-start-column="113" selection-end-line="27" selection-end-column="113" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/pages/error.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.024793388">
-          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
           <folding />
         </state>
       </provider>
