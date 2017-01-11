@@ -7,10 +7,11 @@
 <body>
 
 <nav>
-    <a href="/sw5/">Hackify</a>
+    <a href="/sw5_insecure/">Hackify</a>
+    <a href="?controller=blog&action=index">Blog</a>
 </nav>
 
-<?php require_once('routes.php') ?>
+<?php require_once('./routes.php') ?>
 
 <footer>
     Copyright Hackify

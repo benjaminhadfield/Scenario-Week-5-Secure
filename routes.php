@@ -9,6 +9,10 @@ function call($controller, $action) {
     case 'pages':
       $controller = new PagesController();
       break;
+    case 'blog':
+      require_once('models/blog.php');
+      $controller = new BlogController();
+      break;
   }
 
   // call the action
@@ -17,7 +21,10 @@ function call($controller, $action) {
 
 // list of controllers and their actions
 // these are our allowed values
-$controllers = array('pages' => ['home', 'error']);
+$controllers = array(
+  'pages' => ['home', 'error'],
+  'blog' => ['index', 'show']
+);
 
 // check the requested controller and action are both valid
 if (array_key_exists($controller, $controllers)) {
