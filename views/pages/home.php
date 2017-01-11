@@ -1,2 +1,1 @@
-<p>Hey <?php echo $first_name . ' ' . $last_name; ?></p>
-<p>Success!</p>
+<p>Welcome to Hackify! Our incredibly secure web app ;)</p>

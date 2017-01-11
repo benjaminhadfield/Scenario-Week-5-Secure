@@ -13,6 +13,10 @@ function call($controller, $action) {
       require_once('models/blog.php');
       $controller = new BlogController();
       break;
+    case 'account':
+      require_once('models/account.php');
+      $controller = new AccountController();
+      break;
   }
 
   // call the action
@@ -23,7 +27,8 @@ function call($controller, $action) {
 // these are our allowed values
 $controllers = array(
   'pages' => ['home', 'error'],
-  'blog' => ['index', 'show']
+  'blog' => ['index', 'show'],
+  'account' => ['login', 'logout', 'edit']
 );
 
 // check the requested controller and action are both valid

@@ -4,7 +4,14 @@ class PagesController {
     $first_name = 'Ben';
     $last_name = 'Hadfield';
 
-    require_once('views/pages/home.php');
+    $search_term = $_GET['search'];
+
+    if (!$search_term) {
+      require_once('views/pages/home.php');
+    } else {
+      call('blog', 'index');
+    }
+
   }
 
   public function error() {

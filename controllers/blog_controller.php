@@ -1,7 +1,13 @@
 <?php
 class BlogController {
   public function index() {
-    $blogs = Blog::all();
+    $search_term = $_GET['search'];
+
+    if (!$search_term) {
+      $blogs = Blog::all();
+    } else {
+      $blogs = Blog::filter($search_term);
+    }
     require_once('views/blog/index.php');
   }
 

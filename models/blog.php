@@ -15,7 +15,26 @@ class Blog {
     $db = Db::getInstance();
     $req = $db->query('SELECT * FROM blog');
 
-    // create a list of all DB results
+    // populate list from DB results
+    foreach($req->fetchAll() as $blog) {
+      $list[] = new Blog($blog['id'], $blog['title'], $blog['content']);
+    }
+
+    return $list;
+  }
+
+  public static function filter($query) {
+    $list = [];
+    $db = Db::getInstance();
+    // validate
+    $query = strval($query);
+    // make a secure SQL statement using parameters -> No SQL injection!
+    $req = $db->prepare('SELECT * FROM blog WHERE title LIKE :query');
+    // lets replace params with actual value (to be interpreted as a value and not SQL)
+    $req->bindValue(':query', "%{$query}%");
+    $req->execute();
+
+    // populate list from DB results
     foreach($req->fetchAll() as $blog) {
       $list[] = new Blog($blog['id'], $blog['title'], $blog['content']);
     }
@@ -25,13 +44,12 @@ class Blog {
 
   public static function find($id) {
     $db = Db::getInstance();
-
-    // check ID is valid
+    // validate
     $id = intval($id);
     // make a secure SQL statement using parameters -> No SQL injection!
     $req = $db->prepare('SELECT * FROM blog WHERE id = :id');
     // lets replace params with actual value (to be interpreted as a value and not SQL)
-    $req->execute(array('id' => $id));
+    $req->execute(array(':id' => $id));
     $blog = $req->fetch();
 
     return new Blog($blog['id'], $blog['title'], $blog['content']);
