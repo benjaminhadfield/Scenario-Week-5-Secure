@@ -4,7 +4,8 @@ session_start();
 class AccountController {
   public function register() {
     if (isset($_SESSION['user'])) {
-      return call('pages', 'home');
+      call('pages', 'home');
+      return;
     }
 
     $errors = [];
@@ -39,12 +40,13 @@ class AccountController {
       }
     }
 
-    return require_once('views/account/register.php');
+    require_once('views/account/register.php');
   }
 
   public function login() {
     if (isset($_SESSION['user'])) {
-      return call('pages', 'home');
+      call('pages', 'home');
+      return;
     }
 
     $errors = [];
@@ -72,7 +74,8 @@ class AccountController {
             ];
 
             // call self to get a refresh and activate $_SESSION
-            return $this->login();
+            call('pages', 'home');
+            return;
 
           } else {
             array_push($errors, 'Incorrect username or password.');
@@ -85,7 +88,7 @@ class AccountController {
       }
     }
 
-    return require_once('views/account/login.php');
+    require_once('views/account/login.php');
   }
 
   public function logout() {

@@ -17,6 +17,9 @@ function call($controller, $action) {
       require_once('models/account.php');
       $controller = new AccountController();
       break;
+    case 'admin':
+      $controller = new AdminController();
+      break;
   }
 
   // call the action
@@ -28,7 +31,8 @@ function call($controller, $action) {
 $controllers = array(
   'pages' => ['home', 'error'],
   'blog' => ['index', 'show'],
-  'account' => ['register', 'login', 'logout', 'edit']
+  'account' => ['register', 'login', 'logout', 'edit'],
+  'admin' => ['stats'],
 );
 
 // check the requested controller and action are both valid
