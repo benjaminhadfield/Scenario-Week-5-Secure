@@ -30,7 +30,7 @@ function call($controller, $action) {
 // these are our allowed values
 $controllers = array(
   'pages' => ['home', 'error'],
-  'blog' => ['index', 'show'],
+  'blog' => ['index', 'show', 'create'],
   'account' => ['register', 'login', 'logout', 'edit'],
   'admin' => ['stats'],
 );

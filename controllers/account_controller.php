@@ -30,7 +30,10 @@ class AccountController {
         // create user account
         $created = Account::register($username, $hashed_password);
 
-        if ($created) { echo 'created :)'; }
+        if ($created) {
+          call('pages', 'home');
+          return;
+        }
 
       } else {
         if (!$passes_username_length) { array_push($errors, 'Your username needs to be between 3 and 10 characters.'); }
@@ -71,6 +74,7 @@ class AccountController {
             // set session
             $_SESSION['user'] = (object) [
               'username' => $user->username,
+              'is_admin' => $user->is_admin,
             ];
 
             // call self to get a refresh and activate $_SESSION
@@ -100,6 +104,64 @@ class AccountController {
   }
 
   public function edit() {
+    require_once('controllers/utils/form/validation.php');
+    require_once('controllers/utils/authentication/auth.php');
 
+    if (!is_authenticated()) {
+      call('account', 'login');
+      return;
+    }
+
+    $errors = [];
+
+    $user = Account::getUser($_SESSION['user']->username);
+
+    $username = $_POST['username'];
+    $current_password = $_POST['current-password'];
+    $password1 = $_POST['password1'];
+    $password2 = $_POST['password2'];
+
+    if ($username) {
+      $passes_username_length = field_above_length($username, 3) && field_below_length($username, 10);
+      $passes_unique_username = !Account::getUser($username);
+
+      if ($passes_username_length && $passes_unique_username) {
+        $success = Account::updateUser($user->username, $username, null);
+
+        if ($success) {
+          $_SESSION['user']->username = $username;
+          call('pages', 'home');
+          return;
+        }
+      } else {
+        if (!$passes_username_length) { array_push($errors, 'Your username needs to be betweeen 3 and 10 characters long.'); }
+        if (!$passes_unique_username) { array_push($errors, 'The username ' . $username . ' is already registed to another account.'); }
+      }
+    }
+
+    if ($current_password && $password1 && $password2) {
+      $verified = password_verify($current_password, $user->password);
+      echo 'verified: ' . $verified;
+      if ($verified) {
+        $passes_password_length = field_above_length($password1, 6);
+        $passes_password_match = fields_match($password1, $password2);
+
+        if ($passes_password_length && $passes_password_match) {
+          // save new hashed password to DB.
+          $hashed_password = password_hash($password1, PASSWORD_DEFAULT);
+          $success = Account::updateUser($user->username, null, $hashed_password);
+
+          if ($success) {
+            call('pages', 'home');
+            return;
+          }
+        }
+
+      } else {
+        array_push($errors, 'Check you entered your password correctly and that your new password matches.');
+      }
+    }
+
+    require_once('views/account/edit.php');
   }
 }

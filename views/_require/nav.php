@@ -1,5 +1,5 @@
 <nav class="navbar navbar-toggleable-sm navbar-inverse bg-primary">
-  <a class="navbar-brand" href="?">Hackify</a>
+  <a class="navbar-brand font-weight-bold" href="?">Hackify</a>
   <div class="navbar-nav navbar-collapse">
     <div class="navbar-nav">
       <a class="nav-item nav-link" href="?controller=blog&action=index">Blog</a>
