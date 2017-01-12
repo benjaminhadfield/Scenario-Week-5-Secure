@@ -32,6 +32,13 @@
       <input id="password2" class="form-control" name="password2" type="password" min="6">
     </div>
 
+    <hr>
+
+    <div class="form-group">
+      <label for="colour">Profile Colour</label>
+      <input id="colour" class="form-control" name="colour" type="color" value="<?php echo $_SESSION['user']->colour ?>" style="height: 50px">
+    </div>
+
     <a href="?controller=pages&action=home" class="btn btn-secondary">Cancel</a>
     <button type="submit" class="btn btn-primary">Save Changes</button>
   </form>

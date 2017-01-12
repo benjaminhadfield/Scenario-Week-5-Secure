@@ -31,6 +31,7 @@ class AccountController {
         $created = Account::register($username, $hashed_password);
 
         if ($created) {
+          $this->login($username, $password1);
           call('pages', 'home');
           return;
         }
@@ -75,6 +76,7 @@ class AccountController {
             $_SESSION['user'] = (object) [
               'username' => $user->username,
               'is_admin' => $user->is_admin,
+              'colour' => $user->colour
             ];
 
             // call self to get a refresh and activate $_SESSION
@@ -120,6 +122,7 @@ class AccountController {
     $current_password = $_POST['current-password'];
     $password1 = $_POST['password1'];
     $password2 = $_POST['password2'];
+    $colour = $_POST['colour'];
 
     if ($username) {
       $passes_username_length = field_above_length($username, 3) && field_below_length($username, 10);
@@ -159,6 +162,21 @@ class AccountController {
 
       } else {
         array_push($errors, 'Check you entered your password correctly and that your new password matches.');
+      }
+    }
+
+    if ($colour) {
+      $has_length = field_has_length($colour, 7);
+
+      if ($has_length) {
+        $success = Account::updateUser($user->username, null, null, $colour);
+        if ($success) {
+          $_SESSION['user']->colour = $colour;
+          call('pages', 'home');
+          return;
+        }
+      } else {
+        array_push($errors, 'Enter a valid colour value (in form <strong>#rrggbb</strong>).');
       }
     }
 

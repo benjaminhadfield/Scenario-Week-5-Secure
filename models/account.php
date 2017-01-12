@@ -5,11 +5,12 @@ class Account {
   public $password;
   public $is_admin;
 
-  public function __construct($id, $username, $password, $is_admin = false) {
+  public function __construct($id, $username, $password, $colour = '#0276D8', $is_admin = false) {
     $this->id = $id;
     $this->username = $username;
     $this->password = $password;
     $this->is_admin = $is_admin;
+    $this->colour = $colour;
   }
 
   public static function register($username, $password) {
@@ -25,17 +26,18 @@ class Account {
     return $success;
   }
 
-  public static function updateUser($user_id, $new_username = null, $new_password = null) {
+  public static function updateUser($user_id, $new_username = null, $new_password = null, $new_colour = null) {
     $db = Db::getInstance();
 
     // check user exists
     $user = Account::getUser($user_id);
 
-    if ($user && ($new_username || $new_password)) {
+    if ($user && ($new_username || $new_password || $new_colour)) {
       $new_values = [];
       $sql = 'UPDATE users SET ';
       if ($new_username) { array_push($new_values, 'username=:username'); }
       if ($new_password) { array_push($new_values, 'password=:password'); }
+      if ($new_colour) { array_push($new_values, 'colour=:colour'); }
 
       $sql .= implode(',', $new_values) . ' WHERE id=:id;';
 
@@ -45,10 +47,9 @@ class Account {
 
       if ($new_username) { $req->bindValue(':username', $new_username); }
       if ($new_password) { $req->bindValue(':password', $new_password); }
-
+      if ($new_colour) { $req->bindValue(':colour', $new_colour); }
 
       $success = $req->execute();
-
       return $success;
     }
 
@@ -72,7 +73,7 @@ class Account {
     $user = $req->fetch();
 
     if ($user) {
-      return new Account($user['id'], $user['username'], $user['password'], $user['is_admin']);
+      return new Account($user['id'], $user['username'], $user['password'], $user['colour'], $user['is_admin']);
     } else {
       return false;
     }

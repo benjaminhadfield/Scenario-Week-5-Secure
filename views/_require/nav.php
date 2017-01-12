@@ -1,4 +1,4 @@
-<nav class="navbar navbar-toggleable-sm navbar-inverse bg-primary">
+<nav class="navbar navbar-toggleable-sm navbar-inverse bg-primary pc-bg">
   <a class="navbar-brand font-weight-bold" href="?">Hackify</a>
   <div class="navbar-nav navbar-collapse">
     <div class="navbar-nav">

@@ -1,4 +1,4 @@
-<header class="mb-4 py-2 bg-silver">
+<header id="user-bar" class="mb-4 py-2 bg-silver">
   <div class="container-fluid">
     <p class="m-0 row">
       <?php if (isset($_SESSION['user'])) { ?>

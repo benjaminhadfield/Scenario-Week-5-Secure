@@ -15,3 +15,7 @@ function field_above_length($field, $min_length) {
 function field_below_length($field, $max_length) {
   return strlen($field) <= $max_length;
 }
+
+function field_has_length($field, $length) {
+  return strlen($field) == $length;
+}
