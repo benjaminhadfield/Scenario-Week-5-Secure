@@ -52,6 +52,10 @@ class Blog {
     $req->execute(array(':id' => $id));
     $blog = $req->fetch();
 
-    return new Blog($blog['id'], $blog['title'], $blog['content']);
+    if ($blog) {
+      return new Blog($blog['id'], $blog['title'], $blog['content']);
+    } else {
+      return false;
+    }
   }
 }

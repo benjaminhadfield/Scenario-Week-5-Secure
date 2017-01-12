@@ -1,7 +1,7 @@
 <div class="mb-4">
   <h1 class="m-0">Hackify Blog!</h1>
   <small>
-    <?php echo sizeof($blogs) ?> article<?php echo sizeof($blogs) != 1 ? 's' : '' ?>
+    <?php echo count($blogs) ?> article<?php echo count($blogs) != 1 ? 's' : '' ?>
   </small>
 </div>
 

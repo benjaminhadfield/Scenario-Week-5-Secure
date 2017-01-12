@@ -28,7 +28,7 @@ function call($controller, $action) {
 $controllers = array(
   'pages' => ['home', 'error'],
   'blog' => ['index', 'show'],
-  'account' => ['login', 'logout', 'edit']
+  'account' => ['register', 'login', 'logout', 'edit']
 );
 
 // check the requested controller and action are both valid

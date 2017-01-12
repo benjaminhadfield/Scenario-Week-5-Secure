@@ -3,7 +3,6 @@
   <div class="navbar-nav navbar-collapse">
     <div class="navbar-nav">
       <a class="nav-item nav-link" href="?controller=blog&action=index">Blog</a>
-      <a class="nav-item nav-link" href="?controller=login&action=index">Login</a>
     </div>
     <form class="form-inline navbar-toggler-right" method="get" onsubmit="return checkForm()">
       <input id="search-input" type="text" name="search" value="<?php echo $_GET['search'] ?>" class="form-control mr-sm-2" placeholder="Search blog...">

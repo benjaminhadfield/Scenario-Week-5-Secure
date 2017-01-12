@@ -1,9 +1,6 @@
 <?php
 class PagesController {
   public function home() {
-    $first_name = 'Ben';
-    $last_name = 'Hadfield';
-
     $search_term = $_GET['search'];
 
     if (!$search_term) {
