@@ -5,7 +5,6 @@ if (getenv('env') == 'PRODUCTION') {
   // PHP Data Objects(PDO) Sample Code:
   try {
     $DB_SERVER_PASSWORD = getenv('DB_SERVER_PASSWORD');
-    echo 'DB_SERVER_PASSWORD: ' . $DB_SERVER_PASSWORD;
 
     $conn = new PDO("sqlsrv:server = tcp:comp205p-ae.database.windows.net,1433; Database = comp205p-ae-secure", "comp205p-ae", "${$DB_SERVER_PASSWORD}");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
