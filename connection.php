@@ -7,11 +7,12 @@ if (getenv('ENV') == 'PRODUCTION') {
     $DB_PASSWORD = getenv('DB_PASSWORD');
     $DB_USERNAME = getenv('DB_USERNAME');
 
-    $conn = new PDO("Database=comp205p_ae_secure;Data Source=eu-cdbr-azure-north-e.cloudapp.net;User Id=${$DB_USERNAME};Password=${$DB_PASSWORD}");
+    $conn = new PDO("Database=comp205p_ae_secure;Data Source=eu-cdbr-azure-north-e.cloudapp.net;User Id=$DB_USERNAME;Password=$DB_PASSWORD");
+//    $conn = new PDO("mysql:host=");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   }
   catch (PDOException $e) {
-    print("Error connecting to SQL Server.");
+    echo("<strong>Error connecting to MySQL.</strong><br>");
     die(print_r($e));
   }
 
