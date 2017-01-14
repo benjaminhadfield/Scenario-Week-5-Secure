@@ -1,7 +1,7 @@
 <?php
 
 function call($controller, $action) {
-echo '***** HERE ******<br>';
+echo '***** HERE ******<br>'.$controller.'<br>';
   // require file matching controller name
   require_once('controllers/' . $controller . '_controller.php');
 
@@ -24,7 +24,7 @@ echo '***** HERE ******<br>';
   }
 
   // call the action
-echo '***** HERE ******<br>'.$controller.'<br>';
+echo '***** HERE ******<br>';
   $controller->{ $action }();
 echo '***** HERE ******<br>';
 }
