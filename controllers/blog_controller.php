@@ -11,6 +11,7 @@ class BlogController {
     } else {
       $blogs = Blog::filter($search_term);
     }
+    echo '$blogs: ' . $blogs;
     require_once('views/blog/index.php');
   }
 
