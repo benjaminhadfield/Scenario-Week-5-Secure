@@ -3,7 +3,6 @@ session_start();
 
 class BlogController {
   public function index() {
-    echo 'IN INDEX<br>';
     $search_term = $_GET['search'];
 
     if (!$search_term) {
@@ -11,7 +10,6 @@ class BlogController {
     } else {
       $blogs = Blog::filter($search_term);
     }
-    echo '$blogs: ' . $blogs;
     require_once('views/blog/index.php');
   }
 
