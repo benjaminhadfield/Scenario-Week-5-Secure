@@ -1,4 +1,3 @@
-<?php header("Content-type: text/css; charset: UTF-8"); ?>
 <?php session_start();
 
 require_once('controllers/utils/authentication/auth.php');
