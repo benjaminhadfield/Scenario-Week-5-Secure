@@ -1,8 +1,10 @@
 <?php
 
 function call($controller, $action) {
+echo '***** HERE ******';
   // require file matching controller name
-  require_once('./controllers/' . $controller . '_controller.php');
+  require_once('controllers/' . $controller . '_controller.php');
+echo '***** HERE ******';
 
   // create a new instance of the controller
   switch($controller) {
@@ -36,7 +38,6 @@ $controllers = array(
 );
 
 // check the requested controller and action are both valid
-echo '***** HERE ******';
 if (array_key_exists($controller, $controllers)) {
   if (in_array($action, $controllers[$controller])) {
     call($controller, $action);
