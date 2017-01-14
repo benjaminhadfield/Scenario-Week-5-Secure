@@ -25,7 +25,7 @@
 <?php require_once('_require/user_bar.php') ?>
 
 <div class="container-fluid mb-4">
-    <?php require_once('./routes.php') ?>
+    <?php require_once('routes.php') ?>
 </div>
 
 <?php include_once('_require/footer.php') ?>

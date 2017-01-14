@@ -24,8 +24,8 @@ if (getenv('ENV') == 'PRODUCTION') {
           $conn = new PDO("mysql:host=eu-cdbr-azure-north-e.cloudapp.net;dbname=comp205p_ae_secure;", $DB_USERNAME, $DB_PASSWORD);
           $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           self::$instance = $conn;
-        } catch
-        (PDOException $e) {
+
+        } catch (PDOException $e) {
           echo("<strong>Error connecting to MySQL.</strong><br>");
           die(print_r($e));
         }
@@ -33,6 +33,7 @@ if (getenv('ENV') == 'PRODUCTION') {
       return self::$instance;
     }
   }
+
 } else {
 
   // Singleton pattern
