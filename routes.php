@@ -4,7 +4,6 @@ function call($controller, $action) {
 echo '***** HERE ******';
   // require file matching controller name
   require_once('controllers/' . $controller . '_controller.php');
-echo '***** HERE ******';
 
   // create a new instance of the controller
   switch($controller) {
@@ -25,7 +24,9 @@ echo '***** HERE ******';
   }
 
   // call the action
+echo '***** HERE ******';
   $controller->{ $action }();
+echo '***** HERE ******';
 }
 
 // list of controllers and their actions
