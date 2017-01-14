@@ -3,6 +3,7 @@ session_start();
 
 class BlogController {
   public function index() {
+    echo 'IN INDEX<br>';
     $search_term = $_GET['search'];
 
     if (!$search_term) {
