@@ -36,6 +36,7 @@ $controllers = array(
 );
 
 // check the requested controller and action are both valid
+echo '***** HERE ******';
 if (array_key_exists($controller, $controllers)) {
   if (in_array($action, $controllers[$controller])) {
     call($controller, $action);
